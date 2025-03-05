@@ -48,3 +48,11 @@ logs/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Private notes and commercialization plans
+*_private.md
+*_private.txt
+commercialization_plans/
+business_strategy/
+private_notes/
+LICENSE_HEADER.txt

@@ -3,6 +3,10 @@ Weekly Wellness Newsletter Generator - Main Application
 
 This Flask application serves as the main entry point for the Weekly Wellness Newsletter Generator.
 It provides routes for the admin dashboard, newsletter preview, and sending functionality.
+
+Copyright (c) 2025 Nicole LeGuern
+Licensed under MIT License with attribution requirements
+https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator
 """
 
 import os

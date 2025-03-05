@@ -3,6 +3,10 @@ Configuration settings for the Weekly Wellness Newsletter Generator.
 
 This module contains configuration settings for the application,
 including API keys and other environment-specific variables.
+
+Copyright (c) 2025 Nicole LeGuern
+Licensed under MIT License with attribution requirements
+https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator
 """
 
 import os

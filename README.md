@@ -33,8 +33,8 @@ The following features are part of the private, proprietary implementation and a
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/weekly-wellness-newsletter.git
-   cd weekly-wellness-newsletter
+   git clone https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator.git
+   cd Weekly_Wellness_Newsletter_Generator
    ```
 
 2. Create and activate a virtual environment:
@@ -124,8 +124,30 @@ weekly-wellness-newsletter/
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
 
-## License
+## License and Attribution
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License with an attribution requirement - see the [LICENSE](LICENSE) file for details.
+
+Note: This version (v1.0) is released under MIT License for demonstration and portfolio purposes. Future versions may be released under different licensing terms.
+
+### Attribution Requirements
+
+When using this software or substantial portions of it, you must include the following attribution:
+
+> Created by Nicole LeGuern (CodeQueenie). Original repository: https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator
+
+This attribution may be included in:
+- Documentation
+- "About" section of your application
+- Code comments
+- Credits file that ships with your software
+
+### Citation
+
+If you use this software in academic work, please cite it using the information in the [CITATION.cff](CITATION.cff) file.
+
+## Author
+
+Nicole LeGuern (GitHub: [CodeQueenie](https://github.com/CodeQueenie))

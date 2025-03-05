@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "LeGuern"
+    given-names: "Nicole"
+    orcid: ""  # Add your ORCID if available
+title: "Weekly Wellness Newsletter Generator"
+version: 1.0.0
+date-released: 2025-03-05
+url: "https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator"
+repository-code: "https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator"
+license: MIT
+license-url: "https://github.com/CodeQueenie/Weekly_Wellness_Newsletter_Generator/blob/main/LICENSE"
+abstract: >-
+  A Flask-based application that generates weekly wellness newsletters for a plant-based 
+  nutrition company. This application fetches trending plant-based nutrition news, 
+  self-care tips, and recipes, and formats them into an email newsletter.
+keywords:
+  - wellness
+  - newsletter
+  - plant-based
+  - nutrition
+  - email-marketing
+  - flask
