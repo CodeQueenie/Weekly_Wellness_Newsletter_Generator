@@ -20,6 +20,7 @@ The following features are part of the private, proprietary implementation and a
 - Auto-scheduling for weekly email delivery
 - Advanced SEO optimization for content ranking
 - User database for email preferences & analytics
+- Custom analytics dashboard for tracking engagement
 
 ## Setup and Installation
 
