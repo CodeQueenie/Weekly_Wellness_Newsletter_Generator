@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Weekly Wellness Newsletter Generator{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="card-title mb-4">
+                    <i class="fas fa-leaf text-success me-2"></i>
+                    Weekly Wellness Newsletter Generator
+                </h1>
+                <p class="lead">
+                    Generate and send plant-based nutrition newsletters to your audience.
+                </p>
+                <hr>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card mb-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-newspaper fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Trending News</h5>
+                                <p class="card-text">Automatically fetch the latest plant-based nutrition news from trusted sources.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-utensils fa-3x text-danger mb-3"></i>
+                                <h5 class="card-title">Healthy Recipes</h5>
+                                <p class="card-text">Include delicious plant-based recipes in your weekly newsletter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-heart fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Wellness Tips</h5>
+                                <p class="card-text">Share valuable wellness tips and self-care advice with your audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary btn-lg me-2">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Admin Dashboard
+                    </a>
+                    <a href="{{ url_for('preview_newsletter') }}" class="btn btn-success btn-lg">
+                        <i class="fas fa-eye me-2"></i>
+                        Preview Newsletter
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title mb-3">About This Project</h2>
+                <p>
+                    This is an open-source demo version of the Weekly Wellness Newsletter Generator.
+                    It demonstrates the basic functionality of the application, including:
+                </p>
+                <ul>
+                    <li>Fetching trending plant-based nutrition news</li>
+                    <li>Curating healthy plant-based recipes</li>
+                    <li>Sharing wellness tips and self-care advice</li>
+                    <li>Generating and previewing newsletters</li>
+                </ul>
+                <p>
+                    The full version includes additional features such as AI-generated content,
+                    advanced SEO optimization, automated scheduling, and user analytics.
+                </p>
+                <p class="text-center mt-4">
+                    <a href="https://github.com/yourusername/weekly-wellness-newsletter" target="_blank" class="btn btn-outline-dark">
+                        <i class="fab fa-github me-2"></i>
+                        View on GitHub
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

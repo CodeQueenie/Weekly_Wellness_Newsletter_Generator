@@ -1,0 +1,33 @@
+# Instructions for setting up your .env file
+
+Please create a file named ".env" in the root directory of the project with the following content:
+
+# Flask configuration
+SECRET_KEY=dev_key_for_testing
+FLASK_ENV=development
+FLASK_APP=app.py
+
+# For testing purposes, you can leave the API keys empty
+# The application will use fallback data
+GOOGLE_TRENDS_API_KEY=
+NEWS_API_KEY=
+RECIPE_API_KEY=
+
+# Email configuration (optional for testing)
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_DEFAULT_SENDER=
+
+# Newsletter configuration
+NEWSLETTER_TITLE=Weekly Wellness Newsletter
+COMPANY_NAME=Plant-Based Nutrition Co.
+COMPANY_LOGO_URL=/static/images/logo.png
+COMPANY_WEBSITE=https://example.com
+
+# Content configuration
+MAX_NEWS_ITEMS=3
+MAX_RECIPES=2
+MAX_WELLNESS_TIPS=3

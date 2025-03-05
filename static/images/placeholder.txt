@@ -1,0 +1,12 @@
+This directory will contain images for the application.
+
+The following images should be added:
+- logo.png: Company logo
+- plant-based-diet.jpg: Image for fallback article
+- plant-protein.jpg: Image for fallback article
+- plant-lifestyle.jpg: Image for fallback article
+- buddha-bowl.jpg: Image for fallback recipe
+- lentil-soup.jpg: Image for fallback recipe
+
+Note: These images are not included in the repository to avoid copyright issues.
+You can add your own images to this directory.

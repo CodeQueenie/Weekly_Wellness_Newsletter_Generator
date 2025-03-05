@@ -1,0 +1,269 @@
+{% if not preview %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.NEWSLETTER_TITLE }} - {{ now.strftime('%B %d, %Y') }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .article {
+            margin-bottom: 20px;
+        }
+        .article-title {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-source {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .article-description {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        .recipe {
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .recipe-title {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .recipe-info {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .recipe-summary {
+            margin-bottom: 10px;
+        }
+        .tip {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f1f8e9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 3px;
+        }
+        .tip-content {
+            margin-bottom: 5px;
+        }
+        .tip-source {
+            color: #888;
+            font-size: 12px;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .social-links {
+            margin-bottom: 10px;
+        }
+        .social-link {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .unsubscribe {
+            color: #999;
+            text-decoration: none;
+        }
+        .unsubscribe:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+{% endif %}
+
+{% if preview %}
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-success text-white">
+        <h2 class="mb-0">Newsletter Preview</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            This is a preview of how your newsletter will appear to recipients.
+        </div>
+{% endif %}
+
+        <div class="header">
+            <h1>{{ config.NEWSLETTER_TITLE }}</h1>
+            <p>{{ now.strftime('%B %d, %Y') }}</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Trending in Plant-Based Nutrition</h2>
+                {% if news %}
+                    {% for article in news %}
+                        <div class="article">
+                            {% if article.image_url %}
+                                <img src="{{ article.image_url }}" alt="{{ article.title }}" style="max-width: 100%; margin-bottom: 10px;">
+                            {% endif %}
+                            <h3 class="article-title">{{ article.title }}</h3>
+                            <p class="article-source">Source: {{ article.source }} | {{ article.published_at|truncate(10, true, '') }}</p>
+                            <p class="article-description">{{ article.description }}</p>
+                            <a href="{{ article.url }}" class="article-link" target="_blank">Read more →</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No trending news available at the moment.</p>
+                {% endif %}
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Plant-Based Recipes of the Week</h2>
+                {% if recipes %}
+                    {% for recipe in recipes %}
+                        <div class="recipe">
+                            {% if recipe.image_url %}
+                                <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" style="max-width: 100%; margin-bottom: 10px;">
+                            {% endif %}
+                            <h3 class="recipe-title">{{ recipe.title }}</h3>
+                            <p class="recipe-info">Ready in {{ recipe.ready_in_minutes }} minutes | Serves {{ recipe.servings }}</p>
+                            <p class="recipe-summary">{{ recipe.summary|safe|truncate(200) }}</p>
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                {% for ingredient in recipe.ingredients %}
+                                    <li>{{ ingredient }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a href="{{ recipe.source_url }}" class="article-link" target="_blank">View full recipe →</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No recipes available at the moment.</p>
+                {% endif %}
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Wellness Tips</h2>
+                {% if tips %}
+                    {% for tip in tips %}
+                        <div class="tip">
+                            <p class="tip-content">{{ tip.content }}</p>
+                            <p class="tip-source">Source: {{ tip.source_name }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No wellness tips available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                Follow us: 
+                <a href="#" class="social-link">Facebook</a> | 
+                <a href="#" class="social-link">Twitter</a> | 
+                <a href="#" class="social-link">Instagram</a> | 
+                <a href="#" class="social-link">Pinterest</a>
+            </div>
+            <p>© {{ now.year }} {{ config.COMPANY_NAME }}. All rights reserved.</p>
+            <p>
+                <a href="{{ config.COMPANY_WEBSITE }}" target="_blank">Visit our website</a> | 
+                <a href="#" class="unsubscribe">Unsubscribe</a>
+            </p>
+        </div>
+
+{% if preview %}
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sendModal">
+            <i class="fas fa-paper-plane me-2"></i>
+            Send Newsletter
+        </button>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-2"></i>
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Send Newsletter Modal -->
+<div class="modal fade" id="sendModal" tabindex="-1" aria-labelledby="sendModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sendModalLabel">Send Newsletter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('send_newsletter_route') }}" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="recipients" class="form-label">Recipients (comma-separated)</label>
+                        <textarea class="form-control" id="recipients" name="recipients" rows="3" required></textarea>
+                        <div class="form-text">Enter email addresses separated by commas.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" value="Weekly Wellness Newsletter - {{ now.strftime('%B %d, %Y') }}" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        Send Newsletter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if not preview %}
+    </div>
+</body>
+</html>
+{% endif %}

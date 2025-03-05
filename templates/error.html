@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Error - Weekly Wellness Newsletter Generator{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-exclamation-triangle text-warning fa-5x mb-4"></i>
+                <h1 class="card-title mb-4">Oops! Something went wrong</h1>
+                <p class="lead">
+                    {{ error }}
+                </p>
+                <hr>
+                <div class="mt-4">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="fas fa-home me-2"></i>
+                        Return to Home
+                    </a>
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Go to Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
